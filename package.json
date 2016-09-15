@@ -1,0 +1,27 @@
+{
+  "name": "mws-tslint-rules",
+  "version": "0.0.1",
+  "author": "Various Person",
+  "bugs": {
+    "url": "https://github.com/mindfreakthemon/mws-tslint-rules/issues"
+  },
+  "dependencies": {
+    "tslint": "^3.15.1"
+  },
+  "description": "MWS custom set of TSLint rules",
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  },
+  "homepage": "https://github.com/mindfreakthemon/mws-tslint-rules#readme",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "mindfreakthemon",
+      "email": "mfthemon@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindfreakthemon/mws-tslint-rules.git"
+  }
+}
