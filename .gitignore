@@ -1,7 +1,7 @@
-rules
-test
-typings
-node_modules
+rules/
+test/
+typings/
+node_modules/
 *.log
-.idea
+.idea/
 *.iml
