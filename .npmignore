@@ -1,6 +1,11 @@
-test
-typings
+src/
+test/
+typings/
+typings.json
+tsconfig.json
+gulpfile.js
+tasks/
 node_modules
 *.log
-.idea
+.idea/
 *.iml

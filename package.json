@@ -1,6 +1,6 @@
 {
   "name": "mws-tslint-rules",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Various Person",
   "bugs": {
     "url": "https://github.com/mindfreakthemon/mws-tslint-rules/issues"
@@ -10,7 +10,6 @@
   },
   "scripts": {
     "start": "gulp",
-    "postinstall": "npm run typings install",
     "typings": "typings"
   },
   "description": "MWS custom set of TSLint rules",
