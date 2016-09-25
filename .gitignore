@@ -1,0 +1,7 @@
+rules
+test
+typings
+node_modules
+*.log
+.idea
+*.iml

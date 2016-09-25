@@ -5,6 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Lint = require('tslint/lib/lint');
+var abstractRule_1 = require('tslint/lib/language/rule/abstractRule');
 var Rule = (function (_super) {
     __extends(Rule, _super);
     function Rule() {
@@ -17,7 +18,7 @@ var Rule = (function (_super) {
     Rule.FAILURE_FUNCTION_STRING = 'There must be whitespace between function and ()';
     Rule.FAILURE_NAMED_FUNCTION_STRING = 'White space is not allowed between function name and ()';
     return Rule;
-}(Lint.Rules.AbstractRule));
+}(abstractRule_1.AbstractRule));
 exports.Rule = Rule;
 var NoSpaceInMethodDeclarationWalker = (function (_super) {
     __extends(NoSpaceInMethodDeclarationWalker, _super);
@@ -36,7 +37,7 @@ var NoSpaceInMethodDeclarationWalker = (function (_super) {
         _super.prototype.visitMethodDeclaration.call(this, node);
     };
     NoSpaceInMethodDeclarationWalker.prototype.visitFunctionDeclaration = function (node) {
-        var isAnonymous = !node.name;
+        var isAnonymous = !node.name.getText();
         var methodName = isAnonymous ? 'function ' : node.name.getText();
         var methodBody = node.body.getText();
         var methodText = node.getText();
@@ -63,3 +64,4 @@ var NoSpaceInMethodDeclarationWalker = (function (_super) {
     };
     return NoSpaceInMethodDeclarationWalker;
 }(Lint.RuleWalker));
+//# sourceMappingURL=whitespaceInMethodDeclarationRule.js.map
