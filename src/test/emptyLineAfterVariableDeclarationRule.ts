@@ -13,11 +13,10 @@ const options = {
 	rulesDirectory: 'rules/'
 };
 
-describe('whitespaceInMethodDeclarationRule', () => {
-	describe('for anonymous function', () => {
-		it('should throw error when there is no emty line after last variable statement', () => {
-			let linter = new Linter('empty-line-after-variable-declaration.ts',
-                `class Foo {
+describe('emptyLineAfterVariableDeclaration', () => {
+	it('should throw error when there is no empty line after last variable statement', () => {
+		let linter = new Linter('empty-line-after-variable-declaration.ts',
+			`class Foo {
     foo(var1) {
         if (var1) {
         	let var2 = 2;
@@ -26,11 +25,9 @@ describe('whitespaceInMethodDeclarationRule', () => {
         }
     }
 }`,
-				options);
-			let result = linter.lint();
+			options);
+		let result = linter.lint();
 
-			expect(result.failureCount).to.be.equal(1);
-		});
-
+		expect(result.failureCount).to.be.equal(1);
 	});
 });
