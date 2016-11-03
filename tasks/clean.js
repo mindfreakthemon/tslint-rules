@@ -8,3 +8,5 @@ gulp.task('clean:rules', () => {
 gulp.task('clean:test', () => {
 	return del(['test']);
 });
+
+gulp.task('clean', ['clean:rules', 'clean:test']);
