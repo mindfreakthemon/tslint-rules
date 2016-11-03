@@ -30,13 +30,18 @@ class NoSpaceInMethodDeclarationWalker extends Lint.RuleWalker {
 	}
 
 	protected visitFunctionDeclaration(node: ts.FunctionDeclaration) {
-		let isAnonymous = !node.name.getText();
-		let methodName = isAnonymous ? 'function ' : node.name.getText();
+		let isAnonymous = !node.name;
 		let methodBody = node.body.getText();
 		let methodText = node.getText();
 		let methodDeclaration = methodText.replace(methodBody, '');
-		let regExp = new RegExp(`${methodName}\\(`);
 		let errorMsg = isAnonymous ? Rule.FAILURE_FUNCTION_STRING : Rule.FAILURE_NAMED_FUNCTION_STRING;
+		let regExp: RegExp;
+
+		if (isAnonymous) {
+			regExp = new RegExp(`function\\s\\(`);
+		} else {
+			regExp = new RegExp(`function ${node.name.getText()}\\(`);
+		}
 
 		if (!regExp.test(methodDeclaration)) {
 			this.addFailure(this.createFailure(node.getStart(), node.getWidth(), errorMsg));
@@ -46,13 +51,18 @@ class NoSpaceInMethodDeclarationWalker extends Lint.RuleWalker {
 	}
 
 	protected visitFunctionExpression(node: ts.FunctionExpression) {
-		let isAnonymous = !node.name.getText();
-		let methodName = isAnonymous ? 'function ' : node.name.getText();
+		let isAnonymous = !node.name;
 		let methodBody = node.body.getText();
 		let methodText = node.getText();
 		let methodDeclaration = methodText.replace(methodBody, '');
-		let regExp = new RegExp(`${methodName}\\(`);
 		let errorMsg = isAnonymous ? Rule.FAILURE_FUNCTION_STRING : Rule.FAILURE_NAMED_FUNCTION_STRING;
+		let regExp: RegExp;
+
+		if (isAnonymous) {
+			regExp = new RegExp(`function\\s\\(`);
+		} else {
+			regExp = new RegExp(`function ${node.name.getText()}\\(`);
+		}
 
 		if (!regExp.test(methodDeclaration)) {
 			this.addFailure(this.createFailure(node.getStart(), node.getWidth(), errorMsg));
