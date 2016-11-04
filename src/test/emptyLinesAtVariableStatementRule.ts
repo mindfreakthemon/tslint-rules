@@ -15,7 +15,7 @@ const options = {
 
 describe('emptyLineAfterVariableDeclaration', () => {
 	it('should throw error when there is no empty line after last variable statement', () => {
-		let linter = new Linter('empty-line-after-variable-declaration.ts',
+		let linter = new Linter('empty-lines-at-variable-statement.ts',
 			`class Foo {
     foo(var1) {
         if (var1) {
@@ -32,7 +32,7 @@ describe('emptyLineAfterVariableDeclaration', () => {
 	});
 
 	it('should throw error when there is no empty line before first variable statement', () => {
-		let linter = new Linter('empty-line-after-variable-declaration.ts',
+		let linter = new Linter('empty-lines-at-variable-statement.ts',
 			`class Foo {
     foo(var1) {
         if (var1) {
@@ -53,7 +53,7 @@ describe('emptyLineAfterVariableDeclaration', () => {
 	});
 
 	it('should throw 2 errors when there is no empty line before and after variable statement block', () => {
-		let linter = new Linter('empty-line-after-variable-declaration.ts',
+		let linter = new Linter('empty-lines-at-variable-statement.ts',
 			`class Foo {
     foo(var1) {
         if (var1) {
@@ -73,7 +73,7 @@ describe('emptyLineAfterVariableDeclaration', () => {
 	});
 
 	it('should not throw error when there is empty line before and after each variable statement blocks', () => {
-		let linter = new Linter('empty-line-after-variable-declaration.ts',
+		let linter = new Linter('empty-lines-at-variable-statement.ts',
 			`class Foo {
     foo(var1) {
         if (var1) {
