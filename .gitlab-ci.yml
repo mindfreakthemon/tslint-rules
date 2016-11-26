@@ -1,0 +1,22 @@
+stages:
+  - build
+
+image: WPL3_for_gitlabci_ladbrokes_property_do_not_delete.vm/centos7:v1
+
+cache:
+  key: "$CI_BUILD_NAME"
+  paths:
+    - node_modules/
+    - npm_cache/
+
+before_script:
+  - export npm_config_cache="npm_cache"
+  - export npm_config_registry="http://ua-mws-nexus01.ee.playtech.corp/nexus/content/repositories/npmjs/"
+  - node -v
+  - npm -v
+  - npm i --silent
+
+run_tests_task:
+  stage: build
+  script:
+    - npm run-script gulp

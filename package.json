@@ -7,7 +7,8 @@
   },
   "scripts": {
     "start": "gulp",
-    "typings": "typings"
+    "typings": "typings",
+    "gulp": "gulp"
   },
   "description": "MWS custom set of TSLint rules",
   "devDependencies": {
