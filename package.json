@@ -1,6 +1,6 @@
 {
   "name": "mws-tslint-rules",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Various Person",
   "dependencies": {
     "tslint": "^3.15.1"
@@ -21,8 +21,8 @@
     "gulp-uglify": "^2.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4"
+    "typescript": "^2.2.1",
+    "typings": "^2.1.0"
   },
   "license": "MIT"
 }
