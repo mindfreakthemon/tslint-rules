@@ -1,9 +1,9 @@
 {
   "name": "mws-tslint-rules",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "author": "Various Person",
   "dependencies": {
-    "tslint": "^3.15.1"
+    "tslint": "^5.3.2"
   },
   "scripts": {
     "start": "gulp",
@@ -12,13 +12,14 @@
   },
   "description": "MWS custom set of TSLint rules",
   "devDependencies": {
-    "chai": "^3.5.0",
+    "@types/node": "^7.0.22",
+    "chai": "^4.0.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
     "gulp-spawn-mocha": "^3.1.0",
     "gulp-tsc": "^1.2.0",
-    "gulp-uglify": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
     "typescript": "^2.2.1",

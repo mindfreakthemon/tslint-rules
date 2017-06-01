@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as Lint from 'tslint/lib/lint';
+import * as Lint from 'tslint';
 
 import { AbstractRule } from 'tslint/lib/language/rule/abstractRule';
 
@@ -61,8 +61,7 @@ class EmptyLinesAtVariableStatementWalker extends Lint.RuleWalker {
             textBetweenBeforeNodes = textBetweenBeforeNodes.substring(firstNewLineIndex + 1, textBetweenBeforeNodes.length);
 
             if (textBetweenBeforeNodes.indexOf('\n') === -1) {
-                this.addFailure(this.createFailure(node.getStart(), node.getWidth(),
-                    Rule.EMPTY_LINE_MISSING_BEFORE_VARIABLE_DECLARATION_BLOCK_STRING));
+                this.addFailureAt(node.getStart(), node.getWidth(), Rule.EMPTY_LINE_MISSING_BEFORE_VARIABLE_DECLARATION_BLOCK_STRING);
             }
         }
 
@@ -74,8 +73,7 @@ class EmptyLinesAtVariableStatementWalker extends Lint.RuleWalker {
             textBetweenAfterNodes = textBetweenAfterNodes.substring(firstNewLineIndex + 1, textBetweenAfterNodes.length);
 
             if (textBetweenAfterNodes.indexOf('\n') === -1) {
-                this.addFailure(this.createFailure(node.getStart(), node.getWidth(),
-                    Rule.EMPTY_LINE_MISSING_AFTER_VARIABLE_DECLARATION_BLOCK_STRING));
+                this.addFailureAt(node.getStart(), node.getWidth(), Rule.EMPTY_LINE_MISSING_AFTER_VARIABLE_DECLARATION_BLOCK_STRING);
             }
         }
     }

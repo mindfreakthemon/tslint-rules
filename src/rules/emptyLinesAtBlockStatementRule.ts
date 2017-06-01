@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as Lint from 'tslint/lib/lint';
+import * as Lint from 'tslint';
 
 import { AbstractRule } from 'tslint/lib/language/rule/abstractRule';
 
@@ -121,8 +121,8 @@ class EmptyLinesAtBlockStatementWalker extends Lint.RuleWalker {
                 default:
                     break;
             }
-
-            this.addFailure(this.createFailure(node.getStart(), node.getWidth(), errorMsg));
+            
+            this.addFailureAt(node.getStart(), node.getWidth(), errorMsg);
         }
     }
 }
