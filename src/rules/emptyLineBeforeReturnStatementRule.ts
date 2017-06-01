@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as Lint from 'tslint/lib/lint';
+import * as Lint from 'tslint';
 
 import { AbstractRule } from 'tslint/lib/language/rule/abstractRule';
 
@@ -44,8 +44,7 @@ class EmptyLineBeforeReturnStatementWalker extends Lint.RuleWalker {
                     textBeforeNode = textBeforeNode.substring(firstNewLineIndex + 1, textBeforeNode.length);
 
                     if (textBeforeNode.indexOf('\n') === -1) {
-                        this.addFailure(this.createFailure(node.getStart(), node.getWidth(),
-                            Rule.EMPTY_LINE_MISSING_BEFORE_RETURN_STRING));
+                        this.addFailureAt(node.getStart(), node.getWidth(), Rule.EMPTY_LINE_MISSING_BEFORE_RETURN_STRING);
                     }
                 }
 

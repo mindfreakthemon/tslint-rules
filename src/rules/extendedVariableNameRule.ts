@@ -1,5 +1,5 @@
 import * as ts from 'typescript';
-import * as Lint from 'tslint/lib/lint';
+import * as Lint from 'tslint';
 
 /**  KEEP IN SYNC WITH README.md
 
@@ -237,37 +237,12 @@ class VariableNameWalker extends Lint.RuleWalker {
 		super.visitInterfaceDeclaration(node);
 	}
 
-	// what is this?
-	public visitBindingElement(node: ts.BindingElement) {
-		if (node.name.kind === ts.SyntaxKind.Identifier) {
-			const identifier = <ts.Identifier> node.name;
-			this.checkName(identifier, this, this.getNodeTags(node, VARIABLE_TAG));
-		}
-		super.visitBindingElement(node);
-	}
-
-	public visitParameterDeclaration(node: ts.ParameterDeclaration) {
-		if (node.name.kind === ts.SyntaxKind.Identifier) {
-			const identifier = <ts.Identifier> node.name;
-			this.checkName(identifier, this, this.getNodeTags(node, PARAMETER_TAG));
-		}
-		super.visitParameterDeclaration(node);
-	}
-
 	public visitPropertyDeclaration(node: ts.PropertyDeclaration) {
 		if (node.name != null && node.name.kind === ts.SyntaxKind.Identifier) {
 			const identifier = <ts.Identifier> node.name;
 			this.checkName(identifier, this, this.getNodeTags(node, PROPERTY_TAG));
 		}
 		super.visitPropertyDeclaration(node);
-	}
-
-	public visitVariableDeclaration(node: ts.VariableDeclaration) {
-		if (node.name.kind === ts.SyntaxKind.Identifier) {
-			const identifier = <ts.Identifier> node.name;
-			this.checkName(identifier, this, this.getNodeTags(node, VARIABLE_TAG));
-		}
-		super.visitVariableDeclaration(node);
 	}
 
 	public visitVariableStatement(node: ts.VariableStatement) {
