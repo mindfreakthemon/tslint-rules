@@ -94,6 +94,12 @@ class SortingImportWalker extends Lint.RuleWalker {
 			let importCopyNode = importsCopy[i].node;
 
 			if (importNode.getText() !== importCopyNode.getText()) {
+				if (this.imports[i].type === importsCopy[i].type &&
+					importNode.getText().length === importCopyNode.getText().length) {
+					// imports are of the same type and length, but probably got reordered due to unstable sort
+					continue;
+				}
+
 				let fix = new Lint.Replacement(importNode.getStart(), importNode.getWidth(), importCopyNode.getText());
 
 				this.addFailureAt(importNode.getStart(), importNode.getWidth(), Rule.FAILURE_STRING, fix);
