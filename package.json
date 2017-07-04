@@ -5,6 +5,7 @@
   "peerDependencies": {
     "tslint": "^5.3.2"
   },
+  "repository": "http://gitlab.ee.playtech.corp/ladbrokes/tslint-rules",
   "scripts": {
     "start": "gulp",
     "gulp": "gulp"
