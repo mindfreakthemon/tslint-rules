@@ -6,8 +6,7 @@ gulp.task('test', ['compile:test'], () => {
 		.pipe(mocha({
 			// debugBrk: DEBUG,
 			// r: 'node_modules/chai/chai.js',
-			R: 'nyan',
-			// istanbul: !DEBUG
+			R: 'nyan'
 		}));
 });
 

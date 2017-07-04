@@ -16,3 +16,4 @@ before_script:
 fetest:
   script:
     - npm run-script gulp
+    - npm run-script gulp test

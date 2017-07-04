@@ -1,7 +1,6 @@
 rules/
 test/
 !src/**
-typings/
 node_modules/
 *.log
 .idea/
