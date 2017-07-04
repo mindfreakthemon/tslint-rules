@@ -7,18 +7,19 @@ interface ISortingImportOptions {
 	orderSortingType: string;
 }
 
+const defaultImportTypeSortingOrder = ['EQUALS', 'NAMED', 'NAMED_WITHOUT_BRACKETS', 'NAMESPACE', 'SIDE_EFFECT'];
+
+enum SortingDirection {
+	MIN_TO_MAX_LENGTH,
+	MAX_TO_MIN_LENGTH
+}
+
 export class Rule extends AbstractRule {
 	public static FAILURE_STRING = 'Module imports sorted incorrectly';
 
 	public apply(sourceFile: ts.SourceFile): Lint.RuleFailure[] {
 		return this.applyWithWalker(new SortingImportWalker(sourceFile, this.getOptions()));
 	}
-}
-const defaultImportTypeSortingOrder = ['EQUALS', 'NAMED', 'NAMED_WITHOUT_BRACKETS', 'NAMESPACE', 'SIDE_EFFECT'];
-
-enum SortingDirection {
-	MIN_TO_MAX_LENGTH,
-	MAX_TO_MIN_LENGTH
 }
 
 class SortingImportWalker extends Lint.RuleWalker {
@@ -138,11 +139,10 @@ class SortingImportWalker extends Lint.RuleWalker {
 		});
 	}
 
-	private getSortFunction() {
+	private getSortFunction(): Function {
 		let importTypeSortingOrder = this.ruleOptions.orderImportType;
 
 		return (a, b) => {
-
 			if (importTypeSortingOrder.indexOf(a.type) > importTypeSortingOrder.indexOf(b.type)) {
 				return 1;
 			}
