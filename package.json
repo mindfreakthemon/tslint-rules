@@ -8,7 +8,8 @@
   "repository": "http://gitlab.ee.playtech.corp/ladbrokes/tslint-rules",
   "scripts": {
     "start": "gulp",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "prepublishOnly": "gulp"
   },
   "description": "MWS custom set of TSLint rules",
   "devDependencies": {
