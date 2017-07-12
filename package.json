@@ -1,6 +1,6 @@
 {
   "name": "mws-tslint-rules",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "author": "Various Person",
   "peerDependencies": {
     "tslint": "^5.3.2"
