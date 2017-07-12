@@ -15,7 +15,7 @@ export class Rule extends AbstractRule {
 class TypesAInMethodDeclarationWalker extends Lint.RuleWalker {
 	
 	protected visitMethodDeclaration(node: ts.MethodDeclaration): void {
-		let methodBody = node.body.getText();
+		let methodBody = node.body ? node.body.getText() : '';
 		let methodText = node.getText();
 		let methodDeclaration = methodText.replace(methodBody, '');
 
