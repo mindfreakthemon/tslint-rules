@@ -297,7 +297,7 @@ To run the tests execute `npm test`.
 
 [deps-image]: https://img.shields.io/david/mindfreakthemon/tslint-rules.svg?style=flat-square
 [deps-url]: https://david-dm.org/mindfreakthemon/tslint-rules
-[dev-deps-image]: https://img.shields.io/david/dev/BendingBender/tslint-rules.svg?style=flat-square
-[dev-deps-url]: https://david-dm.org/BendingBender/tslint-rules?type=dev
+[dev-deps-image]: https://img.shields.io/david/dev/mindfreakthemon/tslint-rules.svg?style=flat-square
+[dev-deps-url]: https://david-dm.org/mindfreakthemon/tslint-rules?type=dev
 [npm-image]: https://nodei.co/npm/mws-tslint-rules.png?downloads=true
-[npm-url]: https://npmjs.org/package/cumws-tslint-rules
+[npm-url]: https://npmjs.org/package/mws-tslint-rules
