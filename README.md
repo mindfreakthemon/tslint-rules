@@ -36,8 +36,7 @@ Now configure some of the new rules.
 
 ## `empty-line-before-return-statement`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -53,12 +52,10 @@ TODO
 #### Options:
 
 Not configurable.
-</details>
 
 ## `empty-lines-at-block-statement`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -74,12 +71,10 @@ TODO
 #### Options:
 
 Not configurable.
-</details>
 
 ## `empty-lines-at-variable-statement`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -95,12 +90,10 @@ TODO
 #### Options:
 
 Not configurable.
-</details>
 
 ## `ext-variable-name`
 
-<details>
-  <summary>This rule provides extensive support for customizing allowable variable names
+This rule provides extensive support for customizing allowable variable names
             for a wide variety of variable tags.  The rule is configured by setting up a
             list of sub-rules that specify the tags of variables to check and the checks
             to perform on the variable"s name.  The sub-rules are checked in order
@@ -108,7 +101,6 @@ Not configurable.
             only one that is used.
             
 An example set of sub-rules for an example coding standard is shown below.
-</summary>
 
 #### Rationale:
 
@@ -215,13 +207,11 @@ An example set of sub-rules for an example coding standard is shown below.
  * "allow-trailing-underscore": permits the variable to have a trailing underscore
  * "ban-keywords": bans a list of language keywords from being used
  * {"regex": "^.*$"}: checks the variable name against the given regex
-</details>
 
 
 ## `sorting-import`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -257,13 +247,10 @@ For `orderSortingType`, one of the following:
 * `"MAX_TO_MIN_LENGTH"` -
 * `"MIN_TO_MAX_LENGTH"` -
 
-</details>
-
 
 ## `types-in-method-declaration`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -279,12 +266,10 @@ TODO
 #### Options:
 
 Not configurable.
-</details>
 
 ## `whitespace-in-method-declaration`
 
-<details>
-  <summary>TODO</summary>
+TODO
 
 #### Rationale:
 
@@ -300,7 +285,6 @@ TODO
 #### Options:
 
 Not configurable.
-</details>
 
 
 # Contributions and Development
