@@ -1,17 +1,17 @@
 {
   "name": "mws-tslint-rules",
-  "version": "0.0.15",
-  "author": "Various Person",
+  "version": "0.0.17",
+  "author": "Vitalii Rakovtsii",
   "peerDependencies": {
-    "tslint": "^5.3.2"
+    "tslint": "^5.4.3"
   },
-  "repository": "http://gitlab.ee.playtech.corp/ladbrokes/tslint-rules",
+  "repository": "https://github.com/mindfreakthemon/tslint-rules.git",
   "scripts": {
     "start": "gulp",
-    "gulp": "gulp",
+    "test": "gulp test",
     "prepublishOnly": "gulp"
   },
-  "description": "MWS custom set of TSLint rules",
+  "description": "Custom set of TSLint rules",
   "devDependencies": {
     "@types/chai": "^4.0.0",
     "@types/mocha": "^2.2.41",
