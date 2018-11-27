@@ -1,19 +1,31 @@
-image: gitlab.ee.playtech.corp:4567/po/mws-ci-tests:latest
+image: registry.middle-of-nowhere.name:443/docker-images/npm-packager:latest
+
+stages:
+  - build
+  - publish
 
 cache:
-  key: "$CI_BUILD_NAME/$CI_BUILD_REF_NAME"
-  untracked: true
+  key: $CI_COMMIT_REF_NAME
   paths:
     - node_modules/
-    - portlets/mobile-portlet/docroot/js/components/
-    - npm_cache/
+  untracked: false
 
 before_script:
-  - export npm_config_cache="npm_cache"
-  - export npm_config_registry="http://ua-mws-nexus01.ee.playtech.corp/nexus/content/repositories/npmjs/"
-  - npm install --quiet
-
-fetest:
+    - npm i
+    
+build:
+  stage: build
   script:
-    - npm run-script gulp
-    - npm run-script gulp test
+    - npx gulp
+    - npx gulp test
+
+publish:
+  before_script:
+    - 'echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc'
+  stage: publish
+  script:
+    - npm publish
+  only:
+    refs:
+      - tags
+
