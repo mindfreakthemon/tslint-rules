@@ -1,7 +1,7 @@
-let gulp = require('gulp');
+const gulp = require('gulp');
 
-require('./tasks/compile');
 require('./tasks/clean');
+require('./tasks/compile');
 require('./tasks/test');
 
-gulp.task('default', ['clean', 'compile:rules', 'compile:test']);
+gulp.task('default', gulp.series('clean', 'compile:rules', 'compile:test'));

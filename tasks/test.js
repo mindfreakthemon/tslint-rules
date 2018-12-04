@@ -1,13 +1,12 @@
-let gulp = require('gulp');
-let mocha = require('gulp-spawn-mocha');
+const gulp = require('gulp');
+const mocha = require('gulp-spawn-mocha');
 
-gulp.task('test', ['compile:test'], () => {
-	return gulp.src(['typings/index.d.ts', 'test/**/*.js'], { read: false })
+gulp.task('test', gulp.series('compile:test', () => {
+	return gulp.src(['test/**/*.js'], { read: false })
 		.pipe(mocha({
-			// debugBrk: DEBUG,
-			// r: 'node_modules/chai/chai.js',
-			R: 'nyan'
+			r: 'node_modules/chai/chai.js',
+			R: 'spec'
 		}));
-});
+}));
 
 

@@ -12,7 +12,7 @@ cache:
 
 before_script:
     - npm i
-    
+
 build:
   stage: build
   script:

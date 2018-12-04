@@ -1,21 +1,21 @@
-let gulp = require('gulp');
-let typescript = require('gulp-tsc');
-let plumber = require('gulp-plumber');
+const gulp = require('gulp');
+const typescript = require('gulp-typescript');
+const plumber = require('gulp-plumber');
 
-gulp.task('compile:rules', ['clean:rules'], () => {
-	let compilerOptions = require('../tsconfig.json').compilerOptions;
+gulp.task('compile:rules', gulp.series('clean:rules', () => {
+	const project = typescript.createProject('tsconfig.json');
 
-	return gulp.src(['typings/index.d.ts', 'src/rules/**/*.ts'], { base: 'src/rules' })
+	return gulp.src(['src/rules/**/*.ts'], { base: 'src/rules' })
 		.pipe(plumber())
-		.pipe(typescript(compilerOptions))
+		.pipe(project())
 		.pipe(gulp.dest('rules'));
-});
+}));
 
-gulp.task('compile:test', ['clean:test'], () => {
-	let compilerOptions = require('../tsconfig.json').compilerOptions;
+gulp.task('compile:test', gulp.series('clean:test', () => {
+	const project = typescript.createProject('tsconfig.json');
 
-	return gulp.src(['typings/index.d.ts', 'src/test/**/*.ts'], { base: 'src/test' })
+	return gulp.src(['src/test/**/*.ts'], { base: 'src/test' })
 		.pipe(plumber())
-		.pipe(typescript(compilerOptions))
+		.pipe(project())
 		.pipe(gulp.dest('test'));
-});
+}));

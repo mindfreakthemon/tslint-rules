@@ -1,12 +1,8 @@
-let gulp = require('gulp');
-let del = require('del');
+const gulp = require('gulp');
+const del = require('del');
 
-gulp.task('clean:rules', () => {
-	return del(['rules']);
-});
+gulp.task('clean:rules', () => del(['rules']));
 
-gulp.task('clean:test', () => {
-	return del(['test']);
-});
+gulp.task('clean:test', () => del(['test']));
 
-gulp.task('clean', ['clean:rules', 'clean:test']);
+gulp.task('clean', gulp.series('clean:rules', 'clean:test'));
